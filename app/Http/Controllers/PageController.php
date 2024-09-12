@@ -9,7 +9,10 @@ class PageController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $trains = Train::all();
+        $title = 'Treni in partenza oggi';
+
+        return view('home', compact('trains', 'title'));
     }
 
     public function about()
